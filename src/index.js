@@ -1,9 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import { render } from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+import './index.css';
+import Database from './components/Database';
+import Table from './components/Table';
+import Record from './components/Record';
+import NotFound from './components/NotFound';
+
+render((
+  <Router history={browserHistory}>
+    <Route path="/" component={Database}/>
+    <Route path="/:table" component={Table}/>
+    <Route path="/:table/:record" component={Record}/>
+    <Route path="*" component={NotFound}/>
+  </Router>
+), document.getElementById('root'))
