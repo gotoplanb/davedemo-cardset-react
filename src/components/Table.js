@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Header from './Header';
 
 class Table extends Component {
   render() {
     return (
       <div className="Table">
-        <h1>Table</h1>
+        <Header title="Table" />
       </div>
     );
   }
