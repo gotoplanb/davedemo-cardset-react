@@ -1,17 +1,36 @@
+/* eslint-disable jsx-quotes */
+
 import React from 'react';
 
-class Header extends React.Component {
+import {
+  PageHeader,
+  PageHeaderHeading,
+  PageHeaderHeadingTitle,
+  Button,
+  ButtonGroup,
+  Grid,
+} from 'react-lightning-design-system';
 
-  render() {
-    return (
-      <h1>{this.props.title}</h1>
-    )
-  }
-
-  static propTypes = {
-    title: React.PropTypes.string.isRequired
-  }
-
-}
-
-export default Header;
+export default () => (
+  <div>
+    <h2 className="slds-text-heading--label slds-m-bottom--small">Salesforce Lightning Design System Trailhead Module</h2>
+    <PageHeader>
+      <PageHeaderHeading
+        legend="ACCOUNTS"
+        title={(
+          <Grid vertical={false}>
+            <PageHeaderHeadingTitle>
+              My Accounts
+            </PageHeaderHeadingTitle>
+          </Grid>
+        )}
+        info="COUNT items"
+        rightActions={[
+          <ButtonGroup key={0} className="slds-button-space-left">
+            <Button type="neutral">New Account</Button>
+          </ButtonGroup>,
+        ]}
+      />
+    </PageHeader>
+  </div>
+);

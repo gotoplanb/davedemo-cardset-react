@@ -1,14 +1,37 @@
-import React, { Component } from 'react';
-import Header from './Header';
+import React from 'react';
 
-class Table extends Component {
-  render() {
-    return (
-      <div className="Table">
-        <Header title="Table" />
-      </div>
-    );
-  }
-}
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHeaderColumn,
+  TableRowColumn,
+} from 'react-lightning-design-system';
 
-export default Table;
+export default () => (
+  <div>
+    <Table
+      bordered
+      noRowHover
+    >
+      <TableHeader>
+        <TableRow>
+          <TableHeaderColumn>Account ID</TableHeaderColumn>
+          <TableHeaderColumn>Account name</TableHeaderColumn>
+        </TableRow>
+      </TableHeader>
+
+      <TableBody>
+        <TableRow>
+          <TableRowColumn>123</TableRowColumn>
+          <TableRowColumn>Account 1</TableRowColumn>
+        </TableRow>
+        <TableRow>
+          <TableRowColumn>456</TableRowColumn>
+          <TableRowColumn>Account 2</TableRowColumn>
+        </TableRow>
+      </TableBody>
+    </Table>
+  </div>
+);
