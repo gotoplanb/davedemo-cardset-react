@@ -10,7 +10,7 @@ import {
 } from 'react-lightning-design-system';
 
 export default () => (
-  <div>
+  <div className="slds-m-top--medium">
     <Table
       bordered
       noRowHover
